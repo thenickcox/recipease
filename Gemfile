@@ -21,6 +21,7 @@ end
 
 gem 'jquery-rails'
 
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -40,10 +41,6 @@ gem "pg", ">= 0.14.1"
 gem 'sqlite3'
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
-gem "minitest-spec-rails", ">= 4.3.8", :group => :test
-gem "minitest-wscolor", ">= 0.0.3", :group => :test
-gem "capybara", ">= 2.0.2", :group => :test
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "devise", ">= 2.2.3"
 gem "simple_form", ">= 2.0.4"
@@ -52,3 +49,18 @@ gem "figaro", ">= 0.5.3"
 gem "better_errors", ">= 0.6.0", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
+group :test, :development do
+  gem 'rspec-rails' 
+  gem 'factory_girl_rails', ">= 4.2.0"
+  gem 'guard-rspec', "~> 0.7.0"
+end
+
+group :test do
+  gem 'faker', '~> 1.0.1'
+  gem 'capybara', '~> 1.1.2'
+  gem 'database_cleaner', '~> 0.7.2'
+  gem 'launchy', '~> 2.1.0'
+  gem 'shoulda-matchers'
+end
+
