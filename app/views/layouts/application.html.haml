@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title MichaelaRecipes
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag 'defaults'
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+  - [:notice, :error, :message, :success].each do |key|
+    - unless flash[key].blank?
+      %p{ :class => "flash flash_#{key}" }= flash[key]
+  = yield
