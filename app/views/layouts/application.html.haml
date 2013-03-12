@@ -7,7 +7,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-  - [:notice, :error, :message, :success].each do |key|
-    - unless flash[key].blank?
-      %p{ :class => "flash flash_#{key}" }= flash[key]
-  = yield
+    .container
+      - if current_user
+        = render 'shared/header'
+      - [:notice, :error, :message, :success].each do |key|
+        - unless flash[key].blank?
+          %div{ class: "alert alert-#{key}" }
+            %button{ type: 'button', class: "close ", :'data-dismiss' => 'alert' } &times;
+            %span{ :class => "flash flash_#{key}" }= flash[key]
+      = yield
