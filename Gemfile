@@ -51,7 +51,7 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 
 group :test, :development do
-  gem 'rspec-rails' 
+  gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', ">= 4.2.0"
   gem 'guard-rspec', "~> 0.7.0"
 end
