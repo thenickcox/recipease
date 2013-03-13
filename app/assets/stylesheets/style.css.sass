@@ -1,7 +1,84 @@
 @import 'bootstrap'
 @import 'bootstrap-responsive'
 
+@mixin gradient
+  background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%)
+
+@mixin gradient-darker
+  background: -webkit-linear-gradient(top, (#a7c7dc - 8) 0%, (#85b2d3 - 12) 100%)
+
+$omnes: 'omnes-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif
+$rooney: 'rooney-web', Georgia, serif
+
+$green: rgb(187,192,126)	
+
 /* header
 .navbar
   .nav
     float: right
+
+body
+  background: url(image_path('knitting-bg.png')) top left repeat
+  font-family: $omnes
+  font-size: 16px
+
+h1, h2, h3, h4, h5
+  font-family: $rooney
+
+.new_user
+  margin: 10%
+  background: rgba(255,255,255,0.3)
+  box-shadow: 0 0 12px #cacaba
+  padding: 0
+  border-radius: 8px
+  h2
+    +gradient
+    padding: 12px
+    border-radius: 8px 8px 0 0
+    border-bottom: 2px solid (#85b2d3 - 20)
+    color: #85b2d3 - 90
+    text-shadow: 0 1px 1px #dedede
+    font-family: $rooney
+    font-weight: 800
+  h3
+    color: #85b2d3 - 90
+    font-family: $omnes
+    font-size: 2em
+  .form-inner
+    font-family: $omnes
+    padding: 30px 50px
+  div
+    margin: 8px 0
+  input[type='email'], input[type='password']
+    font-family: $omnes
+    color: #85b2d3 - 90
+    font-size: 23px
+    background: transparent
+    box-shadow: inset 0 0 8px #ccc
+    padding: 18px 10px
+    width: 500px
+  input[type='submit']
+    +gradient 
+    border: 1px solid #85b2d3
+    padding: 18px 120px
+    color: #85b2d3 - 90 
+    text-shadow: 0 1px 1px #dedede
+    font-size: 23px
+    border-radius: 4px
+    font-family: $omnes
+    font-weight: 600
+    &:hover
+      +gradient-darker
+      
+  .remember
+    margin: 10px 0
+    input[type='checkbox']
+      float: left
+      margin-right: 5px
+  a
+    background: none
+    &:link, &:visited
+      color: #85b2d3 - 90
+    &:hover
+      color: #85b2d3 - 30
+    
