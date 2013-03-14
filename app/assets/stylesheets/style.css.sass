@@ -1,16 +1,21 @@
 @import 'bootstrap'
 @import 'bootstrap-responsive'
+@import font-awesome
 
 @mixin gradient
-  background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%)
+  /* background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%)
+  background: -webkit-linear-gradient(top, #bece7b 0%,#abbf76 100%) 
 
 @mixin gradient-darker
-  background: -webkit-linear-gradient(top, (#a7c7dc - 8) 0%, (#85b2d3 - 12) 100%)
+  background: -webkit-linear-gradient(top, (#bece7b - 8) 0%, (#abbf76 - 12) 100%)
 
 $omnes: 'omnes-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif
 $rooney: 'rooney-web', Georgia, serif
 
-$green: rgb(187,192,126)	
+$green_dark: #abbf76 - 90
+$green: #abbf76
+$blue: #90AFB1
+$gray: #6C6B67
 
 /* header
 .navbar
@@ -35,13 +40,13 @@ h1, h2, h3, h4, h5
     +gradient
     padding: 12px
     border-radius: 8px 8px 0 0
-    border-bottom: 2px solid (#85b2d3 - 20)
-    color: #85b2d3 - 90
+    border-bottom: 2px solid ($green - 20)
+    color: $green_dark
     text-shadow: 0 1px 1px #dedede
     font-family: $rooney
     font-weight: 800
   h3
-    color: #85b2d3 - 90
+    color: $green_dark
     font-family: $omnes
     font-size: 2em
   .form-inner
@@ -59,9 +64,9 @@ h1, h2, h3, h4, h5
     width: 500px
   input[type='submit']
     +gradient 
-    border: 1px solid #85b2d3
+    border: 1px solid $green - 20
     padding: 18px 120px
-    color: #85b2d3 - 90 
+    color: $green_dark
     text-shadow: 0 1px 1px #dedede
     font-size: 23px
     border-radius: 4px
@@ -69,6 +74,12 @@ h1, h2, h3, h4, h5
     font-weight: 600
     &:hover
       +gradient-darker
+  .icon-signin
+    position: relative
+    right: 115px
+    top: 4px
+    font-size: 1.1em
+    color: $green_dark
       
   .remember
     margin: 10px 0
@@ -78,7 +89,7 @@ h1, h2, h3, h4, h5
   a
     background: none
     &:link, &:visited
-      color: #85b2d3 - 90
+      color: $green_dark
     &:hover
-      color: #85b2d3 - 30
+      color: $green_dark + 30
     
