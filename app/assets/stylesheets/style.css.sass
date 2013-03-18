@@ -22,6 +22,7 @@
   text-shadow: 0 1px 1px #dedede
   border-radius: 4px
   font-family: $omnes
+  text-decoration: none
   &:hover
     @include green-gradient-darker
     text-decoration: none
@@ -67,6 +68,13 @@ body
 
 h1, h2, h3, h4, h5
   font-family: $rooney
+
+a
+  color: $green_dark
+  text-decoration: underline
+  &:hover
+    background: none
+    color: $green_dark + 20
 
 .new_user
   margin: 10%
@@ -176,6 +184,34 @@ td
       position: relative
       right: 25px
 
+/* Form
+h1
+  margin: 15px 0 30px 25px
+form.new_recipe
+  margin-left: 25px
+  margin-bottom: 20px
+div.actions
+  margin: 20px 0 55px 0
+abbr[title='required']
+  border: none
+  color: #A41411
+input[type='text'], textarea
+  width: 300px
+  max-height: 300px
+  min-height: 25px
+  font-size: 20px
+  font-family: $omnes
+  padding: 5px 3px
+textarea
+  width: 500px
+input[type='submit']
+  @include green-button-style
+  padding: 8px 40px
+  font-size: 19px
+  font-weight: 400
+  margin-right: 8px
+.back
+  float: right
 
     
     

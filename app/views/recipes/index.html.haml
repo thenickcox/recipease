@@ -3,6 +3,7 @@
 %table.recipes
   %tr.top
     %th Name
+    %th Original Source
     %th Season
     %th Edit Recipe
     %th Delete Recipe
@@ -10,6 +11,7 @@
   - @recipes.each do |recipe|
     %tr
       %td= link_to recipe.name, recipe
+      %td= link_to 'Go to recipe', recipe.link
       %td= recipe.season
       %td.button
         .button
