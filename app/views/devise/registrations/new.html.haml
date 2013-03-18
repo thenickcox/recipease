@@ -1,0 +1,22 @@
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  %h2 Sign up
+
+  .form-inner
+    = devise_error_messages!
+
+    %h3 Need an account? Fill out this form.
+    %div
+      = f.label :email
+      = f.email_field :email, :autofocus => true
+    %div
+      = f.label :password
+      = f.password_field :password
+
+    %div
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation
+    %div
+      = f.submit "Sign up"
+      %i.icon-pencil
+
+    = render "devise/shared/links"
