@@ -1,7 +1,7 @@
 $(document).ready ->
 
   closeAlert = ->
-    $('.alert').alert('close')
+    $('.fadeout-alert').alert('close')
 
   setTimeout(closeAlert, 3000)
   
