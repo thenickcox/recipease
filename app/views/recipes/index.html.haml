@@ -1,25 +1,27 @@
-%h1 Listing recipes
+%h1 My Recipes
 
-%table
-  %tr
+%table.recipes
+  %tr.top
     %th Name
-    %th Link
     %th Season
-    %th Directions
-    %th
-    %th
-    %th
+    %th Edit Recipe
+    %th Delete Recipe
 
   - @recipes.each do |recipe|
     %tr
-      %td= recipe.name
-      %td= recipe.link
+      %td= link_to recipe.name, recipe
       %td= recipe.season
-      %td= recipe.directions
-      %td= link_to 'Show', recipe
-      %td= link_to 'Edit', edit_recipe_path(recipe)
-      %td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td.button
+        .button
+          = link_to 'Edit', edit_recipe_path(recipe)
+          %i.icon-edit
+      %td.button
+        .button
+          = link_to 'Delete', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'
+          %i.icon-trash
 
 %br
 
-= link_to 'New Recipe', new_recipe_path
+.add 
+  = link_to 'New Recipe', new_recipe_path, class: 'button'
+  %i.icon-plus-sign

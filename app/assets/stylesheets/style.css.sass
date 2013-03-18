@@ -2,12 +2,41 @@
 @import 'bootstrap-responsive'
 @import font-awesome
 
-@mixin gradient
+@mixin green-gradient
   /* background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 100%)
   background: -webkit-linear-gradient(top, #bece7b 0%,#abbf76 100%) 
 
-@mixin gradient-darker
+@mixin green-gradient-darker
   background: -webkit-linear-gradient(top, (#bece7b - 8) 0%, (#abbf76 - 12) 100%)
+
+@mixin blue-gradient
+  background: -webkit-linear-gradient(top, #90afb1 0%,#839fa0 100%)
+
+@mixin blue-gradient-darker
+  background: -webkit-linear-gradient(top, (#90afb1 - 8) 0%, (#839fa0 - 12) 100%)
+
+@mixin green-button-style
+  @include green-gradient 
+  border: 1px solid $green - 20
+  color: $green_dark
+  text-shadow: 0 1px 1px #dedede
+  border-radius: 4px
+  font-family: $omnes
+  &:hover
+    @include green-gradient-darker
+    text-decoration: none
+
+@mixin blue-button-style
+  @include blue-gradient
+  border: 1px solid $blue - 20
+  color: $blue_dark
+  text-shadow: 0 1px 1px #dedede
+  border-radius: 4px
+  font-family: $omnes
+  &:hover
+    @include blue-gradient-darker
+    text-decoration: none
+
 
 $omnes: 'omnes-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif
 $rooney: 'rooney-web', Georgia, serif
@@ -15,17 +44,26 @@ $rooney: 'rooney-web', Georgia, serif
 $green_dark: #abbf76 - 90
 $green: #abbf76
 $blue: #90AFB1
+$blue_dark: #90afb1 - 90
 $gray: #6C6B67
 
 /* header
 .navbar
+  .navbar-inner
+    @include green-gradient
   .nav
     float: right
+    li
+      a 
+        color: $green_dark
+      &:hover
+        color: $green_dark + 20
 
 body
   background: url(image_path('knitting-bg.png')) top left repeat
   font-family: $omnes
   font-size: 16px
+
 
 h1, h2, h3, h4, h5
   font-family: $rooney
@@ -37,7 +75,7 @@ h1, h2, h3, h4, h5
   padding: 0
   border-radius: 8px
   h2
-    +gradient
+    @include green-gradient
     padding: 12px
     border-radius: 8px 8px 0 0
     border-bottom: 2px solid ($green - 20)
@@ -63,17 +101,10 @@ h1, h2, h3, h4, h5
     padding: 18px 10px
     width: 500px
   input[type='submit']
-    +gradient 
-    border: 1px solid $green - 20
+    @include green-button-style
     padding: 18px 120px
-    color: $green_dark
-    text-shadow: 0 1px 1px #dedede
     font-size: 23px
-    border-radius: 4px
-    font-family: $omnes
     font-weight: 600
-    &:hover
-      +gradient-darker
   .icon-signin
     position: relative
     right: 115px
@@ -92,4 +123,59 @@ h1, h2, h3, h4, h5
       color: $green_dark
     &:hover
       color: $green_dark + 30
+
+/* Recipes index
+
+h1
+  color: $blue_dark
+
+.add
+  .button
+    @include green-button-style
+    color: $green_dark
+    font-weight: 400
+    font-size: 16px
+    padding: 8px 30px 8px 20px
+  .icon-plus-sign
+    position: relative
+    right: 28px
+    color: $green_dark
+    text-shadow: 0 1px 1px #dedede
+
+table, td, tr, th
+  border: 1px solid $green + 30
+  padding: 10px 20px
+
+table.recipes
+  background: #fff
+  margin: 20px 0
+  min-width: 600px
+
+table.recipes, tr.top
+  border-radius: 8px 8px 0 0 
+
+th 
+  @include green-gradient
+  color: $green_dark
+
+td
+  &.button
+    text-align: center
+  a
+    color: $green_dark
+    text-decoration: underline
+    &:hover
+      background: none
+      color: $green_dark + 20
+  .button 
+    a
+      @include blue-button-style
+      padding: 3px 30px 3px 5px
+      text-decoration: none
+    i
+      position: relative
+      right: 25px
+
+
+    
     
