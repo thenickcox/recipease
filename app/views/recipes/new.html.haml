@@ -1,5 +1,5 @@
 .back
-  = link_to 'Back to All Recipes', recipes_path
+  = link_to 'Back to All Recipes', user_recipes_path(@user)
 %h1 New recipe
 
 = render 'form'

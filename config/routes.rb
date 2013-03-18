@@ -1,9 +1,11 @@
 MichaelaRecipes::Application.routes.draw do
-  resources :recipes
 
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
-  resources :users
+
+  resources :users do
+    resources :recipes
+  end
 
 
   # The priority is based upon order of creation:

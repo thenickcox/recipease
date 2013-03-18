@@ -1,7 +1,7 @@
 %h1 My Recipes
 
 .add 
-  = link_to 'New Recipe', new_recipe_path, class: 'button'
+  = link_to 'New Recipe', new_user_recipe_path(@user), class: 'button'
   %i.icon-plus-sign
 
 %table.recipes
@@ -15,20 +15,20 @@
 
   - @recipes.each do |recipe|
     %tr
-      %td= link_to recipe.name, recipe
-      %td= link_to recipe.source, recipe.link
+      %td= link_to recipe.name, user_recipe_path(@user.id, recipe)
+      %td= link_to recipe.source, ("http://" + recipe.link)
       %td= recipe.season
       %td= recipe.course
       %td.button
         .button
-          = link_to 'Edit', edit_recipe_path(recipe)
+          = link_to 'Edit', edit_user_recipe_path(@user.id, recipe)
           %i.icon-edit
       %td.button
         .button
-          = link_to 'Delete', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'
+          = link_to 'Delete', ([@user, recipe]), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'
           %i.icon-trash
 
 
 .add 
-  = link_to 'New Recipe', new_recipe_path, class: 'button'
+  = link_to 'New Recipe', new_user_recipe_path(@user.id), class: 'button'
   %i.icon-plus-sign
