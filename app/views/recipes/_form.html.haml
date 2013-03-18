@@ -8,7 +8,7 @@
 
   = f.input :name
   = f.input :link
-  = f.input :season
+  = f.input :season, collection: %w(spring summer fall winter), prompt: 'Choose season'
   = f.input :directions
   .actions
     = f.submit 'Save'
