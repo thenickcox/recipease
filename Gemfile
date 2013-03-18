@@ -37,8 +37,14 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "pg", ">= 0.14.1"
-gem 'sqlite3'
+group :production do
+  gem "pg", ">= 0.14.1"
+end
+
+group :development do
+  gem 'sqlite3'
+end
+
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => :development
 gem "bootstrap-sass", ">= 2.3.0.0"
