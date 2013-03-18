@@ -9,14 +9,16 @@
     %th Name
     %th Original Source
     %th Season
+    %th Course
     %th Edit Recipe
     %th Delete Recipe
 
   - @recipes.each do |recipe|
     %tr
       %td= link_to recipe.name, recipe
-      %td= link_to 'Go to recipe', recipe.link
+      %td= link_to recipe.source, recipe.link
       %td= recipe.season
+      %td= recipe.course
       %td.button
         .button
           = link_to 'Edit', edit_recipe_path(recipe)

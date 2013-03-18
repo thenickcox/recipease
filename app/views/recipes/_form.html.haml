@@ -7,8 +7,11 @@
           %li= msg
 
   = f.input :name
+  = f.input :source
   = f.input :link
   = f.input :season, collection: %w(spring summer fall winter), prompt: 'Choose season'
+  = f.input :protein, as: :radio_buttons
+  = f.input :course, collection: ['appeteizer', 'soup', 'dessert', 'entrée', 'side', 'salad'], prompt: 'Choose course'
   = f.input :directions
   .actions
     = f.submit 'Save'

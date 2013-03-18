@@ -14,7 +14,7 @@
         = render 'shared/header'
       - [:notice, :error, :message, :success].each do |key|
         - unless flash[key].blank?
-          %div{ class: "alert alert-#{key}" }
+          %div{ class: "alert fade in alert-#{key}" }
             %button{ type: 'button', class: "close ", :'data-dismiss' => 'alert' } &times;
             %span{ :class => "flash flash_#{key}" }= flash[key]
       = yield
