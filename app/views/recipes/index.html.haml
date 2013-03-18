@@ -1,5 +1,9 @@
 %h1 My Recipes
 
+.add 
+  = link_to 'New Recipe', new_recipe_path, class: 'button'
+  %i.icon-plus-sign
+
 %table.recipes
   %tr.top
     %th Name
@@ -22,7 +26,6 @@
           = link_to 'Delete', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button'
           %i.icon-trash
 
-%br
 
 .add 
   = link_to 'New Recipe', new_recipe_path, class: 'button'
