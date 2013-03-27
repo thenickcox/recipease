@@ -1,5 +1,3 @@
-require_relative '../spec_helper'
-
 describe Recipe do
 
   it 'should have a valid factory' do

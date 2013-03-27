@@ -3,5 +3,6 @@ FactoryGirl.define do
     name 'Lasagna'
     link 'http://lasagna.com'
     directions 'Eat lasagna'
+    source 'The Blog'
   end
 end

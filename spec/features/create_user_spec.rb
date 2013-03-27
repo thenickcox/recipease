@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative '../spec_helper'
 
 describe 'Creating a user' do
 
@@ -10,7 +10,7 @@ describe 'Creating a user' do
     end
     click_button 'Sign up'
     page.should have_content 'You have signed up successfully.'
-    current_path.should == recipes_path
+    current_path.should == user_recipes_path(User.last)
   end
 
 end
