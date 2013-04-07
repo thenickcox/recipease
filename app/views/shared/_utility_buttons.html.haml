@@ -1,0 +1,9 @@
+.button-container
+  .show-button.back-button
+    %i.icon-double-angle-left
+    = link_to 'Back to all recipes', user_recipes_path(@user)
+
+  .show-button.edit-button
+    = link_to 'Edit this recipe', edit_user_recipe_path(@user, @recipe)
+    %i.icon-edit
+
