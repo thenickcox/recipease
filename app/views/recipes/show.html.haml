@@ -1,18 +1,15 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @recipe.name
-%p
-  %b Link:
-  = @recipe.link
-%p
-  %b Season:
-  = @recipe.season
-%p
-  %b Directions:
-  = @recipe.directions
+= render 'shared/utility_buttons'
 
-= link_to 'Edit', edit_user_recipe_path(@user, @recipe)
-\|
-= link_to 'Back', user_recipes_path(@user)
+.recipe-show
+  %h1= @recipe.name
+  %h4
+    Originally found on
+    = link_to @recipe.source, @recipe.link
+
+  .directions
+    =sanitize(textilize(@recipe.directions))
+
+= render 'shared/utility_buttons'
+
