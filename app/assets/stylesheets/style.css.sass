@@ -227,7 +227,7 @@ input[type='submit']
 .back
   float: right
 
-/* Recipe
+/* Recipe show
 .recipe-show
   h1
     margin: 40px 0 10px 0
@@ -238,11 +238,24 @@ input[type='submit']
   border-radius: 4px
   margin-bottom: 40px
 
-  p
-    max-width: 450px
+  p, ul
+    max-width: 580px
     font-family: $omnes
-    font-size: 15px
+    font-size: 17px
     line-height: 1.4em
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+  li
+    margin: 8px 0
+    padding-left: 1em
+    text-indent: -.7em
+    &:before
+      content: '• '
+      color: $green_dark
+      font-size: 1.4em
 
 .button-container
   display: inline-block
