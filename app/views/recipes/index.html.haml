@@ -13,7 +13,7 @@
     %th Edit Recipe
     %th Delete Recipe
 
-  - @recipes.each do |recipe|
+  - @user.recipes.each do |recipe|
     %tr
       %td= link_to recipe.name, user_recipe_path(@user.id, recipe)
       %td= link_to recipe.source, ("http://" + recipe.link)

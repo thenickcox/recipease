@@ -58,6 +58,7 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "font-awesome-rails"
 gem 'rails-assets-listjs'
 gem 'RedCloth'
+gem 'thin'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
