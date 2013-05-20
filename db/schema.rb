@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318033449) do
+ActiveRecord::Schema.define(:version => 20130520014417) do
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
     t.string   "link"
     t.string   "season"
     t.text     "directions"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.boolean  "protein"
     t.string   "course"
     t.string   "source"
     t.integer  "user_id"
+    t.boolean  "featured",   :default => false
   end
 
   create_table "users", :force => true do |t|

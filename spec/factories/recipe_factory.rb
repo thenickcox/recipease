@@ -5,5 +5,6 @@ FactoryGirl.define do
     link 'http://lasagna.com'
     directions 'Eat lasagna'
     source 'The Blog'
+    featured false
   end
 end

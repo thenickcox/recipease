@@ -59,6 +59,9 @@ gem "font-awesome-rails"
 gem 'rails-assets-listjs'
 gem 'RedCloth'
 gem 'thin'
+gem 'spork'
+gem 'pry'
+gem 'nested_form'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'

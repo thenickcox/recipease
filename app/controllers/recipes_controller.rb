@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
   # GET /recipes/new.json
   def new
     @user = User.find(params[:user_id])
-    @recipe = Recipe.new
+    @recipe = @user.recipes.build || @recipe.new
 
     respond_to do |format|
       format.html # new.html.erb

@@ -6,6 +6,7 @@
         - @recipe.errors.full_messages.each do |msg|
           %li= msg
 
+  = f.input :user_id, as: :hidden, input_html: { value: @user.id }
   = f.input :name
   = f.input :source
   = f.input :link
@@ -13,6 +14,7 @@
   = f.input :protein, as: :radio_buttons
   = f.input :course, collection: ['appeteizer', 'soup', 'dessert', 'entrée', 'side', 'salad'], prompt: 'Choose course'
   = f.input :directions
+  = f.input :featured, as: :boolean
   .actions
     = f.submit 'Save'
     or

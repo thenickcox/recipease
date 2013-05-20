@@ -4,14 +4,11 @@
   = link_to 'New Recipe', new_user_recipe_path(@user), class: 'button'
   %i.icon-plus-sign
 
-%table.recipes
-  %tr.top
-    %th Name
-    %th Original Source
-    %th Season
-    %th Course
-    %th Edit Recipe
-    %th Delete Recipe
+.featured
+  %h3 Featured Recipes
+  %ul
+    - @user.recipes.featured.each do |recipe|
+      %li= link_to recipe.name, user_recipe_path(@user.id, recipe)
 
   - @user.recipes.each do |recipe|
     %tr

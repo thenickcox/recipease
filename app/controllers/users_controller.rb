@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @recipe = @user.recipes.build(params[:recipe])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @recipe = @user.recipes.build || @recipe.new
 
     respond_to do |format|
       if @user.save
@@ -57,6 +59,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    @recipe = @user.recipes.build(params[:recipe])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
