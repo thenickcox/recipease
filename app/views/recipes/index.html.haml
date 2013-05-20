@@ -10,6 +10,16 @@
     - @user.recipes.featured.each do |recipe|
       %li= link_to recipe.name, user_recipe_path(@user.id, recipe)
 
+%table#tablesorter.recipes
+  %thead
+    %tr.top
+      %th Name
+      %th Original Source
+      %th Season
+      %th Course
+      %th.sorter-false Edit Recipe
+      %th.sorter-false Delete Recipe
+
   - @user.recipes.each do |recipe|
     %tr
       %td= link_to recipe.name, user_recipe_path(@user.id, recipe)

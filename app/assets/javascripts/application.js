@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery.tablesorter.min
 //= require_tree .
 //= require custom_scripting

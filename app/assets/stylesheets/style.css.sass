@@ -76,6 +76,11 @@ a
     background: none
     color: $green_dark + 20
 
+p, li, td
+  font-family: $omnes
+  font-size: 16px
+  line-height: 1.4em
+
 .new_user
   margin: 10%
   background: rgba(255,255,255,0.3)
@@ -188,6 +193,7 @@ td
     i
       position: relative
       right: 25px
+      color: $blue_dark
 
 /* Form
 h1
@@ -195,11 +201,16 @@ h1
 form.new_recipe
   margin-left: 25px
   margin-bottom: 20px
+.input
+  margin: 10px 0 
 div.actions
   margin: 20px 0 55px 0
 abbr[title='required']
   border: none
   color: #A41411
+input[type='checkbox']
+  float: left
+  margin-right: 5px
 input[type='text'], textarea
   width: 300px
   max-height: 300px
@@ -214,8 +225,8 @@ select
 span.radio
   display: inline-block
   margin-right: 10px
-  label
-    font-size: 16px
+label
+  font-size: 16px
 textarea
   width: 500px
 input[type='submit']
@@ -288,6 +299,39 @@ i
   i
     left: 35px
 
+.featured
+  background: rgba(255,255,255,0.8)
+  border: 1px solid $green
+  padding: 25px
+  border-radius: 4px
+  width: 50%
+    
 
-    
-    
+// tablesorter
+/* tables
+
+#tablesorter
+  width: 100%
+  text-align: left
+  thead tr th, tfoot tr th
+    cursor: pointer
+  th.sorter-false
+    cursor: text
+  thead tr .header
+    background-image: url(image_path('bg.gif'))
+    background-repeat: no-repeat
+    background-position: center right
+    cursor: pointer
+  tbody
+    td
+      vertical-align: top
+    tr.odd td
+      background-color: #F0F0F6
+  thead tr
+    background: $green
+    .headerSortUp
+      background-image: url(image_path('asc.gif'))
+      background-color: $green + 25
+    .headerSortDown
+      background-image: url(image_path('desc.gif'))
+      background-color: $green + 25
