@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @recipes }
+      format.json { render json: Recipe.where(user_id: params[:user_id]).featured }
     end
   end
 

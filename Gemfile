@@ -62,6 +62,7 @@ gem 'thin'
 gem 'spork'
 gem 'pry'
 gem 'nested_form'
+gem 'backbone-on-rails'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'

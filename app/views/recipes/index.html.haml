@@ -1,14 +1,15 @@
 %h1 My Recipes
 
-.add 
+.add
   = link_to 'New Recipe', new_user_recipe_path(@user), class: 'button'
   %i.icon-plus-sign
 
 .featured
   %h3 Featured Recipes
-  %ul
-    - @user.recipes.featured.each do |recipe|
-      %li= link_to recipe.name, user_recipe_path(@user.id, recipe)
+  %span.loading
+    Loading featured recipes…&nbsp;
+    = image_tag 'ajax-loader.gif'
+  %ul#featured_recipes
 
 %table#tablesorter.recipes
   %thead
@@ -36,6 +37,7 @@
           %i.icon-trash
 
 
-.add 
+.add
   = link_to 'New Recipe', new_user_recipe_path(@user.id), class: 'button'
   %i.icon-plus-sign
+

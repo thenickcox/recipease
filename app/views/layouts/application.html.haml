@@ -19,3 +19,4 @@
             %button{ type: 'button', class: "close ", :'data-dismiss' => 'alert' } &times;
             %span{ :class => "flash flash_#{key}" }= flash[key]
       = yield
+    = javascript_include_tag 'app'
