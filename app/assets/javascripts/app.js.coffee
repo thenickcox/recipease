@@ -5,6 +5,7 @@ window.App =
 
 urlAry = window.location.href.split('/')
 userId = urlAry[urlAry.length - 2]
+console.log userId
 
 App.Recipe = Backbone.Model.extend()
 
@@ -33,7 +34,7 @@ $(window).load ->
 
   _.each recipes, (recipe) ->
     $('#featured_recipes').append(
-      "<li><a href='/users/#{recipe.get('userId')}/recipes/#{recipe.get('id')}'>" +
+      "<li><a href='/users/#{recipe.get('user_id')}/recipes/#{recipe.get('id')}'>" +
       recipe.get('name') +
       '</a>' +
       "<button class='unfeature' data-unfeature-id='#{recipe.cid}'>Unfeature <i class='icon-remove-sign'></i></button>" +
