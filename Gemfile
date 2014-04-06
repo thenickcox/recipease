@@ -62,8 +62,7 @@ gem 'thin'
 gem 'spork'
 gem 'pry'
 gem 'nested_form'
-gem 'active_model_serializers'
-gem 'inherited_resources'
+gem 'backbone-on-rails'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
