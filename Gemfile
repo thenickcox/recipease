@@ -64,6 +64,8 @@ gem 'pry'
 gem 'nested_form'
 gem 'backbone-on-rails'
 
+gem 'ruby-haml-js'
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails', ">= 4.2.0"

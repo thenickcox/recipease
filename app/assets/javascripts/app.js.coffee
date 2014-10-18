@@ -32,7 +32,7 @@ App.Views.RecipeListView = Backbone.View.extend
 
 App.Views.RecipeView = Backbone.View.extend
   tagName: 'li'
-  template: _.template("<a href='/users/#{userId}/recipes/<%= id %>'><%= name %></a><button class='unfeature'>Unfeature</button>")
+  templ: JST['templates/item_template']
   events:
     'click button.unfeature' : 'unfeature'
   unfeature: ->
@@ -42,7 +42,7 @@ App.Views.RecipeView = Backbone.View.extend
     if $('#featured_recipes').children('li').length is 0
       $('#featured_recipes').html '<p>No featured recipes.</p>'
   render: ->
-    @$el.html(@template(@model.attributes))
+    @$el.html(@templ(@model.attributes))
     @
 
 $ ->
