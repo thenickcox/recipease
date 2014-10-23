@@ -12,3 +12,8 @@
 #= require_tree ./routers
 #= require app
 #= require custom_scripting
+
+window.App =
+  Models: {}
+  Collections: {}
+  Views: {}
