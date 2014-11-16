@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+
+  before_filter :vary_accept, only: [:index]
+
   # GET /recipes
   # GET /recipes.json
   def index
@@ -86,5 +89,11 @@ class RecipesController < ApplicationController
       format.html { redirect_to user_recipes_path(@user) }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def vary_accept
+    response.headers["Vary"]= "Accept"
   end
 end
